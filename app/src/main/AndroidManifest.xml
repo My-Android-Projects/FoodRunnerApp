@@ -9,10 +9,12 @@
         android:roundIcon="@drawable/foodapp3"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodRunner">
-        <activity android:name=".activity.HomePageActivity"
+        <activity android:name=".activity.ConfirmForgotPasswordActivity"></activity>
+        <activity
+            android:name=".activity.HomePageActivity"
+
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.FoodRunner.NoActionBar"
-            ></activity>
+             />
         <activity
             android:name=".activity.ForgotPasswordActivity"
             android:screenOrientation="portrait"

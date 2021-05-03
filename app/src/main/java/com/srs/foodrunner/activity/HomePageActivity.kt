@@ -16,6 +16,7 @@ class HomePageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setTitle("Dashboard")
         val sharedPreferences =
             getSharedPreferences(Constants.MYAPP_PREFERENCES, Context.MODE_PRIVATE)
         val userName = sharedPreferences.getString(Constants.USER_NAME,"")
@@ -46,11 +47,5 @@ class HomePageActivity : AppCompatActivity() {
 
         }
     }
-    fun setUpToolBar()
-    {
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.title="Dashboard"
-        supportActionBar?.setHomeButtonEnabled(true)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
+
 }

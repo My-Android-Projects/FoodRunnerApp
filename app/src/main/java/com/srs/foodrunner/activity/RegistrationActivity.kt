@@ -17,6 +17,7 @@ class RegistrationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupActionBar()
         binding.btnRegister.setOnClickListener{
             val userMobile : String = binding.txtMobile.text.toString()
             val userPassword : String = binding.txtPassword.text.toString()
@@ -42,6 +43,20 @@ class RegistrationActivity : AppCompatActivity() {
             val intent = Intent(this@RegistrationActivity, HomePageActivity::class.java)
             startActivity(intent)
         }
+
+    }
+
+    private fun setupActionBar() {
+
+        setSupportActionBar(binding.toolbarRegistrationActivity)
+
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_backarrow_white)
+        }
+
+        binding.toolbarRegistrationActivity.setNavigationOnClickListener { onBackPressed() }
     }
 
 }
