@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FoodRunner</string>
+    <string name="register_yourself">Register Yourself</string>
+    <string name="forgot_password"> <u>Forgot Password?</u></string>
+    <string name="sign_up_now"> <u> Don\'t have an account? Sign up now </u> </string>
+
+</resources>

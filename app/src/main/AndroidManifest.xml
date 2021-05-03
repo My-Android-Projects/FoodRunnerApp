@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.srs.foodrunner">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/foodapp3"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/foodapp3"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FoodRunner">
+        <activity android:name=".activity.HomePageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.FoodRunner.NoActionBar"
+            ></activity>
+        <activity
+            android:name=".activity.ForgotPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.FoodRunner.NoActionBar" />
+        <activity
+            android:name=".activity.RegistrationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.FoodRunner.NoActionBar" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.FoodRunner.NoActionBar" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.FoodRunner.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
