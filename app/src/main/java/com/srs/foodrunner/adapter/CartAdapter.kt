@@ -19,7 +19,7 @@ class CartAdapter(val context: Context, val itemList:ArrayList<CartEntity>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.recycler_single_cart_item, parent, false)
-        setTotalPrice()
+        getTotalPrice()
         return CartViewHolder(view)
     }
 
@@ -44,7 +44,7 @@ class CartAdapter(val context: Context, val itemList:ArrayList<CartEntity>) :
             {
                 itemList.remove(txtFoodItem)
                 this.notifyDataSetChanged()
-                setTotalPrice()
+                getTotalPrice()
             }
 
         }
@@ -56,7 +56,7 @@ class CartAdapter(val context: Context, val itemList:ArrayList<CartEntity>) :
     override fun getItemCount(): Int {
         return itemList.size
     }
-     fun setTotalPrice(): Int {
+     fun getTotalPrice(): Int {
          totPrice=0
         for (i in 0 until itemList.size)
             totPrice=totPrice+ itemList.get(i).item_price.toInt()

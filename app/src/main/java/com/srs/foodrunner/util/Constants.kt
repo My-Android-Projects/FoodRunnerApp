@@ -4,7 +4,7 @@ object Constants {
     const val USER_MOBILE: String = "user_mobile"
     const val USER_PASSWORD: String = "user_password"
     const val USER_NAME:String="user_name"
-
+    const val USER_ID:String="user_id"
     const val USER_EMAIL:String="user_email"
     const val USER_ADDRESS:String="user_address"
     const val IS_USER_LOGGED: String = "isUserLogged"

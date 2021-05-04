@@ -56,10 +56,11 @@ class LoginActivity : AppCompatActivity() {
                             val success = data.getBoolean("success")
                             if (success) {
                                 val userProfile =data.getJSONObject("data")
+                                val userId=userProfile.getString("user_id")
                                 val userName=userProfile.getString("name")
                                 val userEmail=userProfile.getString("email")
                                 val userAddress=userProfile.getString("address")
-                                saveDetails( userName, userPassword,userMobile,userEmail,userAddress)
+                                saveDetails( userId,userName, userPassword,userMobile,userEmail,userAddress)
                                 val intent =Intent(this@LoginActivity, HomePageActivity::class.java)
                                 startActivity(intent)
                                 finish()
@@ -108,7 +109,7 @@ class LoginActivity : AppCompatActivity() {
 
         }
     }
-    fun saveDetails( userName:String, userPassword:String,userMobile:String,userEmail:String,userAddress:String)
+    fun saveDetails( userId:String,userName:String, userPassword:String,userMobile:String,userEmail:String,userAddress:String)
     {
 
 
@@ -120,6 +121,7 @@ class LoginActivity : AppCompatActivity() {
 
         // Create an instance of the editor which is help us to edit the SharedPreference.
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        editor.putString(Constants.USER_ID,userId)
         editor.putString(Constants.USER_MOBILE,userMobile)
         editor.putString(Constants.USER_PASSWORD,userPassword)
         editor.putString(Constants.USER_EMAIL,userEmail)
