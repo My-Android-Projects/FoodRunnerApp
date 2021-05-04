@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array  name="questions">
+        <item>What are Food Hygiene Ratings?</item>
+        <item>Who runs the Hygiene Ratings initiative?</item>
+        <item>How does the audit process work?</item>
+        <item>If a restaurant kitchen is audited without going through Zomato, will the Hygiene Rating still be displayed on the Zomato platform?</item>
+        <item>What should a restaurant with a good Hygiene Rating do?</item>
+        <item>Is it compulsory for a restaurant to display their Hygiene Rating on Zomato?</item>
+
+    </array>
+    <array  name="answers">
+        <item>The Hygiene Ratings system will help consumers choose where to eat from by giving them information about the hygiene standards. It isn’t easy to judge hygiene standards by appearances alone, so the rating gives you some idea of what’s going on in the kitchen, or behind closed doors.</item>
+         <item>Zomato runs the Hygiene Ratings initiative in partnership with third-party auditors from accredited and reputable companies.</item>
+        <item>After the restaurant has signed up, they are provided with a checklist and given 7 days to prepare for their audit. Following the audit (which is conducted unannounced to maintain credibility) a Hygiene Rating is calculated for the restaurant and displayed on Zomato. A detailed copy of their audit report along with an improvement plan will be shared with the restaurant as well.</item>
+        <item>No, the rating will not be displayed on Zomato in this instance. Audits conducted through Zomato follow a consistent process and format, and without these processes in place the rating will not be displayed.</item>
+        <item>A good Hygiene Rating is good for business. Restaurants with a Hygiene Rating of Good, Very Good, or Excellent should talk about them on social media frequently. Zomato also sends the restaurant stickers to put up at their entrance.</item>
+        <item>No, it is not compulsory and a restaurant may choose to display its Hygiene Rating on Zomato. However, good Hygiene Ratings are good for business and putting them on display serves as good advertisement.</item>
+
+    </array>
+</resources>
