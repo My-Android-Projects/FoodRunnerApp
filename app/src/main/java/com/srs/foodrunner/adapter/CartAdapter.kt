@@ -27,7 +27,7 @@ class CartAdapter(val context: Context, val itemList:ArrayList<CartEntity>) :
     class CartViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val txtFoodItem: TextView = view.findViewById(R.id.txtFoodItem)
         val txtFoodPrice: TextView = view.findViewById(R.id.txtFoodPrice)
-        val imgRemove: ImageView = view.findViewById(R.id.imgRemove)
+       // val imgRemove: ImageView = view.findViewById(R.id.imgRemove)
 
 
     }
@@ -36,7 +36,7 @@ class CartAdapter(val context: Context, val itemList:ArrayList<CartEntity>) :
         val txtFoodItem: CartEntity = itemList[position]
         holder.txtFoodItem.text = txtFoodItem.item_name
         holder.txtFoodPrice.text = "Rs. ${txtFoodItem.item_price}"
-        holder.imgRemove.setOnClickListener {
+        /*holder.imgRemove.setOnClickListener {
 
             val async= DBCartAsyncTask(context, txtFoodItem, 3).execute()
             val result=async.get()
@@ -47,7 +47,7 @@ class CartAdapter(val context: Context, val itemList:ArrayList<CartEntity>) :
                 getTotalPrice()
             }
 
-        }
+        }*/
 
 
     }

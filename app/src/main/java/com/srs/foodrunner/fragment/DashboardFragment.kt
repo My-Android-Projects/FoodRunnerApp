@@ -6,6 +6,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.ProgressBar
@@ -18,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.google.android.material.textfield.TextInputEditText
 import com.srs.foodrunner.R
 import com.srs.foodrunner.adapter.DashboardRecyclerAdapter
 import com.srs.foodrunner.model.Restaruant
@@ -30,7 +33,7 @@ class DashboardFragment : Fragment() {
     lateinit var layoutManager: RecyclerView.LayoutManager
     lateinit var progressBar: ProgressBar
     lateinit var progressLayout: RelativeLayout
-
+    lateinit var et_search: TextInputEditText
     val restaruantInfoList = arrayListOf<Restaruant>()
     var ratingcomparator= Comparator<Restaruant>{restaruant1,restaruant2->
         if(restaruant1.restaruantRating.compareTo(restaruant2.restaruantRating,true)==0)
@@ -60,8 +63,26 @@ class DashboardFragment : Fragment() {
         progressLayout.visibility=View.VISIBLE
         layoutManager = LinearLayoutManager(activity)
         showDetails()
+        et_search=view.findViewById(R.id.et_search)
+       /* et_search.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                val searchString:String =s.toString()
+                if(searchString.equals(""))
+                    recyclerAdapter.clearFilter()
+                else
+                recyclerAdapter.filterList(searchString)
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })*/
+        
         return view
     }
+
     fun showDetails()
     {
         if (ConnectionManager().checkConnectivity(activity as Context)) {
@@ -154,6 +175,7 @@ class DashboardFragment : Fragment() {
         recyclerAdapter.notifyDataSetChanged()
         return super.onOptionsItemSelected(item)
     }
+
 
 
 

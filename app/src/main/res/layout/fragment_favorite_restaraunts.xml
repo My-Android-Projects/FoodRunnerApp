@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".fragment.FavoriteRestaurantsFragment">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lo_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="search"
+        app:startIconDrawable="@drawable/ic_search"
+        android:background="@color/primaryLight"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        >
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+
+        />
+    </com.google.android.material.textfield.TextInputLayout>
 
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recyclerDashboard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
+    android:layout_below="@id/lo_search"
     android:padding="10dp"
     android:layout_marginTop="5dp"
     android:layout_margin="5dp"/>

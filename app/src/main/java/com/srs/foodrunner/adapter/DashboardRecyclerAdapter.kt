@@ -21,13 +21,16 @@ import com.srs.foodrunner.model.Restaruant
 import com.srs.foodrunner.util.Constants
 import com.srs.foodrunner.util.DBRestaruantAsyncTask
 
-class DashboardRecyclerAdapter(val context: Context, val itemList:ArrayList<Restaruant>) :RecyclerView.Adapter<DashboardRecyclerAdapter.DashBoardViewHolder>(){
+class DashboardRecyclerAdapter(val context: Context, var itemList:ArrayList<Restaruant>) :RecyclerView.Adapter<DashboardRecyclerAdapter.DashBoardViewHolder>(){
+    lateinit var completeList:ArrayList<Restaruant>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DashBoardViewHolder {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.recycler_dashboard_single_row_fragment,parent,false)
         return DashBoardViewHolder(view)
     }
     class DashBoardViewHolder(view:View):RecyclerView.ViewHolder(view)
     {
+
+
         val txtRestaruantName:TextView=view.findViewById(R.id.txtRestarauntName)
         val txtRestaruantPrice:TextView=view.findViewById(R.id.txtRestarauntPrice)
        val txtRestaruantRating:TextView=view.findViewById(R.id.txtRestarauntRating)
@@ -38,7 +41,10 @@ class DashboardRecyclerAdapter(val context: Context, val itemList:ArrayList<Rest
     }
 
     override fun onBindViewHolder(holder: DashBoardViewHolder, position: Int) {
+        completeList=ArrayList<Restaruant>()
+        completeList.addAll(itemList)
         val restaruant: Restaruant =itemList[position]
+
         holder.txtRestaruantName.text=restaruant.restaruantName
         holder.txtRestaruantPrice.text=restaruant.restaruantPricePerPerson
         holder.txtRestaruantRating.text=restaruant.restaruantRating
@@ -74,4 +80,29 @@ class DashboardRecyclerAdapter(val context: Context, val itemList:ArrayList<Rest
     override fun getItemCount(): Int {
         return itemList.size
     }
+
+    fun clearFilter()
+    {
+        updateList(completeList)
+
+    }
+    fun updateList(newlist:ArrayList<Restaruant>)
+    {
+        this.itemList=newlist
+        notifyDataSetChanged()
+    }
+    fun filterList(searchString:String)
+    {
+        val tempList :ArrayList<Restaruant> = ArrayList<Restaruant>()
+        for( item in itemList){
+            //or use .equal(text) with you want equal match
+            //use .toLowerCase() for better matches
+            if(item.restaruantName.contains(searchString)){
+                tempList.add(item);
+            }
+        }
+        //update recyclerview
+            updateList(tempList);
+    }
+
 }
